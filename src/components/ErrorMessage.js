@@ -20,9 +20,9 @@ const ErrorList = styled.ul`
 `;
 
 export default class ErrorMessage extends Component {
-  renderMessageArray = errors => {
-    const constraints = errors.map(error =>
-      Object.values(error.constraints))
+  renderMessageArray = (errors) => {
+    const constraints = errors
+      .map((error) => (error.constraints ? Object.values(error.constraints) : error))
       .flat()
       .map((constraint, idx) => <li key={idx}>{constraint}</li>);
 
