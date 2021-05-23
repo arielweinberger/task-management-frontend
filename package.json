@@ -21,10 +21,10 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "start": "PORT=3001 react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "cross-env PORT=3001 react-app-rewired start",
+    "build": "cross-env react-app-rewired build",
+    "test": "cross-env react-app-rewired test --env=jsdom",
+    "eject": "cross-env react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +44,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-decorators": "^7.4.4",
+    "cross-env": "^7.0.3",
     "customize-cra": "^0.2.12",
     "react-app-rewired": "^2.1.3"
   },
