@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'mobx-react';
 import { createBrowserHistory } from 'history';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
-import { Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import './index.scss';
 import App from './App';
@@ -29,9 +29,9 @@ stores.userStore = new UserStore(services.authService);
 
 const Root = (
   <Provider {...stores}>
-    <Router history={history}>
+    <HashRouter history={history}>
       <App />
-    </Router>
+    </HashRouter>
   </Provider>
 );
 ReactDOM.render(Root, document.getElementById('root'));

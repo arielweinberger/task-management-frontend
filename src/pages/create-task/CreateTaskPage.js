@@ -33,12 +33,12 @@ class CreateTaskPage extends Component {
   }
 
   handleSubmitTask = async () => {
-    const { tasksStore, routerStore } = this.props;
+    const { tasksStore } = this.props;
     const { title, description } = this.state;
 
     try {
       await tasksStore.createTask(title, description);
-      routerStore.push('/tasks');
+      window.location = '/#/tasks';
     } catch (error) {
       const errorMessage = error.response.data.message;
       this.setState({ errorMessage });

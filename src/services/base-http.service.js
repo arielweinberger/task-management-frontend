@@ -43,7 +43,7 @@ export default class BaseHttpService {
   }
 
   _handle401() {
-    this.routerStore.push('/signin');
+    window.location = '/#/signin';
   }
 
   _getCommonOptions() {

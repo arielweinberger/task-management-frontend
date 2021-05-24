@@ -62,7 +62,7 @@ class TasksPage extends Component {
     const { userStore, tasksStore, routerStore } = this.props;
     userStore.signout();
     tasksStore.resetTasks();
-    routerStore.push('/signin');
+    window.location = '/#/signin';
   };
 
   renderTasks = () => {
@@ -92,7 +92,7 @@ class TasksPage extends Component {
           <CreateButtonContainer>
             <Fab
               variant="extended"
-              onClick={() => this.props.routerStore.push('/tasks/create')}
+              onClick={() => { window.location = '/#/tasks/create'; }}
             >
               <AddIcon />
               Create Task
