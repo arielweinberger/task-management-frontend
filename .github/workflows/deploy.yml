@@ -11,6 +11,9 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v2
 
+      - name: Yarn Cache
+        uses: c-hive/gha-yarn-cache@v1
+
       - name: Install dependencies
         run: yarn
 
