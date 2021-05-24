@@ -18,7 +18,7 @@ jobs:
         run: yarn
 
       - name: Build React App
-        run: REACT_APP_BASE_URL=test yarn build
+        run: yarn build
         env:
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
           PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
