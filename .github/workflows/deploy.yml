@@ -16,11 +16,7 @@ jobs:
         run: yarn
 
       - name: Build React App
-        run:
-          - echo "Building React app..."
-          - echo "REACT_APP_BASE_URL = ${{ secrets.REACT_APP_BASE_URL }}"
-          - echo "PUBLIC_URL = ${{ secrets.PUBLIC_URL }}"
-          - yarn build
+        run: yarn build
         env:
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
           PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
