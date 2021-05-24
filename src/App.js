@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 
 import SignInPage from './pages/signin/SignInPage';
