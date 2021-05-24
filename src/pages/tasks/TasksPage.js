@@ -59,7 +59,7 @@ class TasksPage extends Component {
   }
   
   handleSignOut = () => {
-    const { userStore, tasksStore, routerStore } = this.props;
+    const { userStore, tasksStore } = this.props;
     userStore.signout();
     tasksStore.resetTasks();
     window.location = '/#/signin';

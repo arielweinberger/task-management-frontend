@@ -10,10 +10,13 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
+
       - name: Install dependencies
         run: yarn
+
       - name: Build React App
         run: REACT_APP_BASE_URL=test yarn build
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
