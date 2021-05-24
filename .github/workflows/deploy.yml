@@ -18,6 +18,7 @@ jobs:
       - name: Build React App
         run: yarn build
         env:
+          HTTPS: 'true'
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
           PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
 
