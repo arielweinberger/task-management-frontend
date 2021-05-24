@@ -43,7 +43,7 @@ export default class BaseHttpService {
   }
 
   _handle401() {
-    window.location = '/#/signin';
+    window.location.hash = '/signin';
   }
 
   _getCommonOptions() {

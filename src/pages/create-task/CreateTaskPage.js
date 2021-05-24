@@ -38,7 +38,7 @@ class CreateTaskPage extends Component {
 
     try {
       await tasksStore.createTask(title, description);
-      window.location = '/#/tasks';
+      window.location.hash = '/tasks';
     } catch (error) {
       const errorMessage = error.response.data.message;
       this.setState({ errorMessage });

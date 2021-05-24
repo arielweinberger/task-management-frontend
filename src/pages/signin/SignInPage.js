@@ -39,7 +39,7 @@ class SignInPage extends Component {
 
     try {
       await this.props.userStore.signin(username, password);
-      window.location = '/#/tasks';
+      window.location.hash = '/tasks';
     } catch (error) {
       const errorMessage = error.response.data.message;
       this.setState({ errorMessage });
@@ -47,7 +47,7 @@ class SignInPage extends Component {
   };
 
   goToSignUp = () => {
-    window.location = '/#/signup';
+    window.location.hash = '/signup';
   };
 
   render() {

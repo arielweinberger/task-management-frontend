@@ -38,7 +38,7 @@ class SignUpPage extends Component {
 
     try {
       await this.props.userStore.signup(username, password);
-      window.location = '/#/signin';
+      window.location.hash = '/signin';
     } catch (error) {
       const errorMessage = error.response.data.message;
       this.setState({ errorMessage });
