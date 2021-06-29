@@ -40,9 +40,13 @@ class SignUpPage extends Component {
       await this.props.userStore.signup(username, password);
       window.location.hash = '/signin';
     } catch (error) {
-      const errorMessage = error.response.data.message;
+      const errorMessage = error.response ? error.response.data.message : error.message;
       this.setState({ errorMessage });
     }
+  };
+
+  goToSignIn = () => {
+    this.props.routerStore.push('/signin')
   };
 
   render() {
@@ -76,7 +80,7 @@ class SignUpPage extends Component {
             />
           </div>
           <p>
-            Passwords must contain at least 1 upper case letter, 1 lower case letter and one number OR special charracter.
+            Passwords must contain at least 1 upper case letter, 1 lower case letter and one number OR special character.
           </p>
           <hr/>
           <div>
@@ -87,6 +91,10 @@ class SignUpPage extends Component {
               onClick={this.submit}
             >
               SIGN UP
+            </Button>
+
+            <Button fullWidth onClick={this.goToSignIn}>
+              Already have an account? Sign in here!
             </Button>
           </div>
         </FormContainer>
