@@ -44,7 +44,7 @@ class Task extends Component {
           </CardContent>
           <CardActions style={{ padding: '14px' }} disableSpacing>
             <Grid
-              justify="space-between" // Add it here :)
+              justifyContent="space-between" // Add it here :)
               container 
             >
               <Grid item>

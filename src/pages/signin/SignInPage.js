@@ -72,7 +72,7 @@ class SignInPage extends Component {
           </div>
           <div>
             <FormField
-              id="outlined-name"
+              id="outlined-password"
               label="Password"
               margin="dense"
               variant="outlined"
