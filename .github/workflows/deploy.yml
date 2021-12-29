@@ -1,29 +1,69 @@
 name: Deploy
 
+
+
 on: [workflow_dispatch]
 
+
+
 jobs:
+
   deploy:
+
     runs-on: ubuntu-latest
+
     steps:
+
       - name: Git Checkout
+
         uses: actions/checkout@v2
 
+
+
       - name: Yarn Cache
+
         uses: c-hive/gha-yarn-cache@v1
 
+       
+
+      - name: Setup node 12
+
+        uses: actions/setup-node@v1
+
+        with:
+
+          node-version: 11.9.0
+
+
+
       - name: Install dependencies
+
         run: yarn
 
+       
+
+
+
       - name: Build React App
+
         run: yarn build
+
         env:
+
           HTTPS: 'true'
+
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+
           PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
 
+
+
       - name: Deploy to GitHub Pages
+
         uses: peaceiris/actions-gh-pages@v3
+
         with:
+
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
           publish_dir: ./build
