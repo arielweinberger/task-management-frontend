@@ -21,7 +21,7 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "start": "cross-env PORT=3001 react-app-rewired start",
+    "start": "cross-env PORT=3002 react-app-rewired start",
     "build": "cross-env react-app-rewired build",
     "test": "cross-env react-app-rewired test --env=jsdom",
     "eject": "cross-env react-scripts eject"
