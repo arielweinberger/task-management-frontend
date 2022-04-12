@@ -9,21 +9,36 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v2
 
-      - name: Yarn Cache
-        uses: c-hive/gha-yarn-cache@v1
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+          with:
+            path: ~/.npm
+            key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+              ${{ runner.os }}-build-${{ env.cache-name }}-
+              ${{ runner.os }}-build-
+              ${{ runner.os }}-
 
       - name: Install dependencies
-        run: yarn
+        uses: actions/setup-node@v2
+          with:
+            node-version: '12'
+          run: npm install
 
       - name: Build React App
-        run: yarn build
-        env:
-          HTTPS: 'true'
-          REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
-          PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
+        uses: actions/setup-node@v2
+          with:
+            node-version: '12'
+          run: npm run build
+          env:
+            HTTPS: 'true'
+            REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+            PUBLIC_URL: ${{ secrets.PUBLIC_URL }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./build
