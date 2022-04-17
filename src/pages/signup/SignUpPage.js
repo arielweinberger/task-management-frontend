@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, TextField } from '@material-ui/core';
 import styled from 'styled-components';
 
-// import './SignUpPage.scss';
 import { inject } from 'mobx-react';
 import ErrorMessage from '../../components/ErrorMessage';
 
@@ -21,6 +20,14 @@ const FormContainer = styled.div`
 const FormField = styled(TextField)`
   width: 100%;
 `;
+
+const Wrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 @inject('userStore', 'routerStore')
 class SignUpPage extends Component {
@@ -49,7 +56,7 @@ class SignUpPage extends Component {
     const { errorMessage } = this.state;
 
     return (
-      <div className="fullscreen-wrapper">
+      <Wrapper>
         <FormContainer>
           <Heading>Join us!</Heading>
           <p>Start managing tasks easily.</p>
@@ -90,7 +97,7 @@ class SignUpPage extends Component {
             </Button>
           </div>
         </FormContainer>
-      </div>
+      </Wrapper>
     );
   }
 }
