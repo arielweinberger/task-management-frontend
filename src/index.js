@@ -1,18 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "mobx-react";
-import { createBrowserHistory } from "history";
-import { RouterStore, syncHistoryWithStore } from "mobx-react-router";
-import { HashRouter } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'mobx-react';
+import { createBrowserHistory } from 'history';
+import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
+import { HashRouter } from 'react-router-dom';
 
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import TasksService from "./services/tasks.service";
-import TasksStore from "./stores/tasks.store";
-import UserStore from "./stores/user.store";
-import AuthService from "./services/auth.service";
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import TasksService from './services/tasks.service';
+import TasksStore from './stores/tasks.store';
+import UserStore from './stores/user.store';
+import AuthService from './services/auth.service';
 
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -52,7 +52,7 @@ const Root = (
     </HashRouter>
   </Provider>
 );
-ReactDOM.render(Root, document.getElementById("root"));
+ReactDOM.render(Root, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
