@@ -5,7 +5,6 @@ import { createBrowserHistory } from 'history';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { HashRouter } from 'react-router-dom';
 
-import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import TasksService from './services/tasks.service';
@@ -13,6 +12,24 @@ import TasksStore from './stores/tasks.store';
 import UserStore from './stores/user.store';
 import AuthService from './services/auth.service';
 
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #434e5e;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+`;
 
 const services = {};
 const stores = {};
@@ -30,6 +47,7 @@ stores.userStore = new UserStore(services.authService);
 const Root = (
   <Provider {...stores}>
     <HashRouter history={history}>
+      <GlobalStyle />
       <App />
     </HashRouter>
   </Provider>
