@@ -9,7 +9,6 @@
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.4",
     "mobx-react-router": "^4.0.7",
-    "node-sass": "^7.0.1",
     "query-string": "^6.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -17,6 +16,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.0.1",
     "rxjs": "^6.5.2",
+    "sass": "^1.50.0",
     "styled-components": "^4.2.0",
     "typescript": "^3.4.5"
   },
