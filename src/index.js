@@ -5,7 +5,7 @@ import { createBrowserHistory } from 'history';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { HashRouter } from 'react-router-dom';
 
-import './index.scss';
+// import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import TasksService from './services/tasks.service';
