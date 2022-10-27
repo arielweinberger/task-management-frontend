@@ -8,6 +8,10 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
+      - name: nodejs14
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
 
       - name: Yarn Cache
         uses: c-hive/gha-yarn-cache@v1
